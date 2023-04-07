@@ -2,42 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bank system</title>
+    <title>Bank System</title>
+    <link href="/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("index-background.webp");
+        }
+    </style>
+
 </head>
 <body>
 
-<h1> This is the bank system </h1>
-<h1> the current username <span th:text="${username}"></span></h1>
-<h1> the current token <span th:text="${token}"></span></h1>
-<h1> the current worker port <span th:text="${workerPort}"></span></h1>
-<br>
+<div class="container">
+    <h1>Bank System</h1>
 
-<form action="CreateNewAccount" method="GET">
-    <input name="Create Customer Account" type="submit" value="Create Customer Account"/>
-</form>
+    <div class="button-container">
+        <form action="CreateNewAccount" method="GET">
+            <button type="submit">Create New Account</button>
+        </form>
 
-<form action="showCustomersAccounts" method="GET">
-    <input name="Show Customers" type="submit" value="Show Customers"/>
-</form>
+        <form action="showCustomersAccounts" method="GET">
+            <button type="submit">Show Customers Accounts</button>
+        </form>
 
-<form action="addNewTransaction" method="GET">
-    <input name="Make Transaction" type="submit" value="Make Transaction"/>
-</form>
+        <form action="addNewTransaction" method="GET">
+            <button type="submit">Add New Transaction</button>
+        </form>
+    </div>
+    <div class="button-container">
+        <form action="getCustomer" method="GET">
+            <button type="submit">Get Customer</button>
+        </form>
 
-<form action="getCustomer" method="GET">
-    <input name="Get Customer" type="submit" value="Get Customer"/>
-</form>
+        <form action="getCustomer-transactions" method="GET">
+            <button type="submit">Get Customer Transactions</button>
+        </form>
 
-<form action="getCustomer-transactions" method="GET">
-    <input name="Show Customer Transactions" type="submit" value="Show Customer Transactions"/>
-</form>
+        <form action="removeCustomer" method="GET">
+            <button type="submit">Remove Customer</button>
+        </form>
+    </div>
 
-<form action="removeCustomer" method="GET">
-    <input name="Remove Customer Account" type="submit" value="Remove Customer Account"/>
-</form>
+    <br>
+    <br>
+    <div class="button-container">
+        <a th:href="@{/}">Home Page</a>
+    </div>
 
-
-<a th:href="@{/}">Home Page</a>
-
+</div>
 </body>
 </html>

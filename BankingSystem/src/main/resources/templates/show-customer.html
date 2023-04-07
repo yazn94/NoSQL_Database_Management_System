@@ -3,27 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Customer Info</title>
+    <link href="/style.css" rel="stylesheet">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #ddd;
+            color: black;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table {
+            font-size: large;
+        }
+    </style>
 </head>
 <body>
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Address</th>
-        <th>Account Balance</th>
-        <th>ID</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td th:text="${customer.getString('name')}"></td>
-        <td th:text="${customer.getString('phone')}"></td>
-        <td th:text="${customer.getString('address')}"></td>
-        <td th:text="${customer.get('accountBalance')}"></td>
-        <td th:text="${customer.get('_id')}"></td>
-    </tr>
-    </tbody>
-</table>
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Account Balance</th>
+            <th>ID</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${customer.getString('name')}"></td>
+            <td th:text="${customer.getString('phone')}"></td>
+            <td th:text="${customer.getString('address')}"></td>
+            <td th:text="${customer.get('accountBalance')}"></td>
+            <td th:text="${customer.get('_id')}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <form action="/bankingSystem" method="get">
+        <button type="submit">Back</button>
+    </form>
+</div>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remove Customer</title>
+  <link href="/style.css" rel="stylesheet">
+  <style>
+    h1 {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      max-width: 23rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Remove Customer</h1>
+  <form action="removeCustomer" method="post">
+    <label for="token">Token:</label>
+    <input id="token" name="token" type="text" value=""/>
+    <br>
+    <br>
+    <button type="submit">Remove Customer</button>
+  </form>
+
+  <br>
+  <br>
+
+  <div class="button-container">
+    <form action="/bankingSystem" method="get">
+      <button type="submit">Back</button>
+    </form>
+  </div>
+
+</div>
+</body>
+</html>

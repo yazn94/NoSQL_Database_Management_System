@@ -287,4 +287,24 @@ public class NetworkManager {
         String url = "http://" + databaseIP + ":8080/api/removeUser/" + token;
         restTemplate.getForObject(url, String.class);
     }
+
+    public void removeCustomer(String customerID, HttpSession httpSession) {
+        String workerPort = httpSession.getAttribute("workerPort").toString();
+        String token = httpSession.getAttribute("token").toString();
+        String username = httpSession.getAttribute("username").toString();
+
+
+        logger.info("workerPort: " + workerPort);
+        logger.info("token: " + token);
+        logger.info("username: " + username);
+
+        String url = "http://" + databaseIP + ":" + workerPort + "/api/deleteDoc/bankingSystem/customers/" + customerID;
+        HttpHeaders headers = new HttpHeaders();
+
+        headers.set("X-Username", username);
+        headers.set("X-Token", token);
+
+        HttpEntity<String> requestEntity = new HttpEntity<>("", headers);
+        restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, String.class);
+    }
 }

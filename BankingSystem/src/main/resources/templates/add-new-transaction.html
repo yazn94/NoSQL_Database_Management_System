@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Transactions Manager</title>
+    <link href="/style.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            width: 50vw;
+        }
+    </style>
 </head>
 <body>
-<form action="storeNewTransaction" method="post">
-    <label for="customerAccountID">Account ID:</label>
-    <input id="customerAccountID" name="customerAccountID" required type="text">
-    <br>
-    <label for="transactionAmount">Transaction Amount:</label>
-    <input id="transactionAmount" name="transactionAmount" required type="text">
-    <br>
-    <input name="Create Transaction" type="submit" value="Create Transaction"/>
-</form>
 
+<div class="container">
+    <h1>Transactions Manager</h1>
+    <form action="storeNewTransaction" method="post">
+        <label for="customerAccountID">Account ID:</label>
+        <input id="customerAccountID" name="customerAccountID" required type="text">
+        <br>
+
+        <label for="transactionAmount">Transaction Amount:</label>
+        <input id="transactionAmount" name="transactionAmount" type="text">
+
+        <br>
+        <br>
+        <button type="submit">Add Transaction</button>
+    </form>
+</div>
 </body>
 </html>

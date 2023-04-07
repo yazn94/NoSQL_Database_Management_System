@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>User Registration</title>
+    <link href="/style.css" rel="stylesheet">
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 55vh;
+            width: 50vw;
+        }
+    </style>
+
+
 </head>
 <body>
+<div class="container">
+    <h1>User Registration</h1>
+    <form action="check-user-credentials" method=post>
+        <label for="username">Username</label>
+        <input id="username" name="username" required type="text">
+        <br>
+        <label for="token">Token</label>
+        <input id="token" name="token" required type="text">
+        <br>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+    <br>
+    <br>
 
-<form action="check-user-credentials" method=post>
-    <label for="username">Username</label>
-    <input id="username" name="username" required type="text">
-    <br>
-    <label for="token">Token</label>
-    <input id="token" name="token" required type="token">
-    <br>
-    <input type="submit">
-</form>
+
+    <a th:href="@{/}">Home Page</a>
+</div>
 
 </body>
 </html>

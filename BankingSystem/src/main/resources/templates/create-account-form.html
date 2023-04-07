@@ -3,28 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Account</title>
+    <link href="/style.css" rel="stylesheet">
+    <style>
+        .container {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 85vh;
+            width: 42vw;
+        }
+    </style>
 </head>
 <body>
 
-<form action="storeNewAccountData" method="post">
-    <label for="customerName">Customer Name:</label>
-    <input id="customerName" name="customerName" required type="text">
-    <br>
-    <label for="customerPhone">Customer Phone Number:</label>
-    <input id="customerPhone" name="customerPhone" required type="text">
-    <br>
-    <label for="customerAddress">Customer Address:</label>
-    <input id="customerAddress" name="customerAddress" required type="text">
-    <br>
-    <label for="accountBalance"> Account Balance</label>
-    <input id="accountBalance" name="accountBalance" required type="number">
-    <br>
-    <input name="Create Account" type="submit" value="Create Account"/>
-</form>
+<div class="container">
+    <h1>Create Account</h1>
+    <form action="storeNewAccountData" method="post">
+        <label for="customerName">Customer Name:</label>
+        <input id="customerName" name="customerName" required type="text">
+        <br>
+        <label for="customerPhone">Customer Phone Number:</label>
+        <input id="customerPhone" name="customerPhone" required type="text">
+        <br>
+        <label for="customerAddress">Customer Address:</label>
+        <input id="customerAddress" name="customerAddress" required type="text">
+        <br>
+        <label for="accountBalance"> Account Balance</label>
+        <input id="accountBalance" name="accountBalance" required type="number">
+        <br>
+        <br>
+        <button type="submit">Create Account</button>
+    </form>
 
-<form action="/bankingSystem" method="get">
-    <button type="submit">Back</button>
-</form>
+    <div class="button-container">
+        <form action="/bankingSystem" method="get">
+            <button type="submit">Back</button>
+        </form>
+    </div>
 
+</div>
 </body>
 </html>

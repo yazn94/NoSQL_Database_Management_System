@@ -3,18 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>new user </title>
+    <link href="/style.css" rel="stylesheet">
+
+    <style>
+        h1 {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 23rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <h1>Register</h1>
-    <p>Enter a username.</p>
 
+<div class="container">
+    <h1>User Registration</h1>
+    <h2>Username</h2>
     <form action="registerNewUser" method="post">
-        <label for="username">Username</label>
         <input autocomplete="false" id="username" name="username" type="text">
+        <br>
+        <br>
+        <br>
         <button type="submit">Register</button>
     </form>
 
+    <br>
+    <br>
+    <br>
+
+
+    <a th:href="@{/}">Home Page</a>
 </div>
 </body>
 </html>

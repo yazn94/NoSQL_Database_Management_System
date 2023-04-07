@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Get Customer Form</title>
+    <link href="/style.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 40vh;
+            width: 40vw;
+        }
+    </style>
 </head>
 <body>
 
-<form action="showCustomer" method="post">
-    <label for="customerAccountID">Customer ID:</label>
-    <input id="customerAccountID" name="customerAccountID" required type="text">
-    <br>
-    <input name="Get Customer" type="submit" value="Get Customer"/>
-</form>
+
+<div class="container">
+    <h1>Get Customer</h1>
+    <form action="showCustomer" method="post">
+        <label for="customerAccountID">Customer ID:</label>
+        <input id="customerAccountID" name="customerAccountID" required type="text">
+        <br>
+        <br>
+        <button type="submit">Get Customer</button>
+    </form>
+</div>
 
 </body>
 </html>

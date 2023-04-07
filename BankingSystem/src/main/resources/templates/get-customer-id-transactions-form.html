@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Get Customer ID</title>
+    <link href="/style.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 40vh;
+            width: 40vw;
+        }
+    </style>
 </head>
 <body>
 
-<form action="showTransactions" method="post">
-    <label for="customerAccountID">Customer ID:</label>
-    <input id="customerAccountID" name="customerAccountID" required type="text">
-    <br>
-    <input name="Get Transactions" type="submit" value="Get Customer"/>
-</form>
+<div class="container">
+    <h1>Get Customer ID</h1>
+    <form action="showTransactions" method="post">
+        <label for="customerAccountID">Customer ID:</label>
+        <input id="customerAccountID" name="customerAccountID" required type="text">
+        <br>
+        <br>
+        <button type="submit">Get Customer Transactions</button>
+    </form>
+</div>
 
 </body>
 </html>

@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration Failed</title>
+    <link href="/style.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 30vh;
+            width: 30vw;
+        }
+    </style>
+
 </head>
 <body>
-<h1> Registration Failed </h1>
 
-<!--TODO, this leads to errors comming back-->
-<a th:href="@{/user-registration.html}">Register Again</a>
+<div class="container">
+    <h1> Registration Failed </h1>
+    <a th:href="@{/userRegistration}">Register Again</a>
+</div>
+
+
 </body>
 </html>

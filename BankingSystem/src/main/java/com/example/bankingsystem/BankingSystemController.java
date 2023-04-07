@@ -224,4 +224,17 @@ public class BankingSystemController {
         model.addAttribute("users", users);
         return "show-all-users";
     }
+
+
+    @GetMapping("removeCustomer")
+    public String removeCustomer(Model model, HttpSession httpSession) {
+        return "remove-customer-form";
+    }
+
+    @PostMapping("removeCustomer")
+    public String removeCustomer(@RequestParam String token, Model model, HttpSession httpSession) {
+        logger.info("Received request to remove customer with token: " + token);
+        networkManager.removeCustomer(token, httpSession);
+        return "bank-system";
+    }
 }

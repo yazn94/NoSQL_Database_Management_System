@@ -1,0 +1,243 @@
+#creating a new database(fine)
+GET http://35.184.131.198:8081/api/createDB/hello
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+###
+# inserting a new collection with schema (fine)
+POST http://35.184.131.198:8081/api/createCol/hello/customer11
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+content-type: application/json
+
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "accountBalance": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "name",
+    "phone",
+    "address",
+    "accountBalance"
+  ],
+  "additionalProperties": false
+}
+
+###
+#inserting a document(fine)
+POST http://35.184.131.198:8081/api/insertOne/bankingsystem/customers
+X-Username: a
+X-Token: 9ed76553-4ae8-45c0-8a50-fed9f792f425
+content-type: application/json
+
+{
+  "name": "FromIntellij",
+  "phone": "123456789",
+  "address": "1234",
+  "accountBalance": 22
+}
+
+###
+# getting all the documents in a collection (fine)
+GET http://35.184.131.198:8083/api/getAllDocs/bankingsystem/transactions
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+###
+#inserting a document(fine)
+POST http://35.184.131.198:8082/api/insertOne/bankingsystem/transactions
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+content-type: application/json
+
+{
+  "customerID": "FromIntellij",
+  "transactionAmount": "+1000"
+}
+
+###
+# checking if 8081 is affinity (fine)
+GET http://35.184.131.198:8082/api/isAffinity
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+###
+#delete the document(fine)
+DELETE http://35.184.131.198:8081/api/deleteDoc/Hello2/first/661c5fb6-e690-487e-8d23-3a29865009d0
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+###
+#delete the collection
+DELETE http://35.184.131.198:8081/api/deleteCol/Hello/first
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+###
+# deleting the database
+DELETE http://35.184.131.198:8081/api/deleteDB/bankingsystem
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+
+###
+# Filtering the data(fine)
+GET http://35.184.131.198:8083/api/filter/bankingsystem/transactions?attributeName=customerID&
+    attributeValue=6b2eb755-8b9e-46dc-9ba4-c4ae0549cd2e
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+###
+# getting the databases(fine)
+GET http://35.184.131.198:8083/api/listDB
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+###
+# getting the collections in a database(fine)
+GET http://35.184.131.198:8081/api/getCollections/bankingsystem
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+
+
+###
+# getting doc by id(fine)
+GET http://35.184.131.198:8081/api/getDoc/Hello2/first/e3f36d96-5251-43dd-a327-1d3cee524c72
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+
+###
+# modify the document(fine)
+POST http://35.184.131.198:8081/api/updateDoc/Hello2/first/f5755238-14bf-4937-92e1-503013a7e3c4/age/2
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+
+###
+# adding new user(fine)
+GET http://35.184.131.198:8082/api/addAuthenticatedUser/tobedeleted/del
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+###
+# adding new admin(fine)
+GET http://35.184.131.198:8081/api/addAdmin/Boss/Fahed
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+
+###
+# removing a user (fine)
+DELETE http://35.184.131.198:8082/api/removeAuthenticatedUser/tobedeleted/del
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+
+###
+# putting the name for each worker(fine)
+GET http://35.184.131.198:8083/api/setCurrentWorkerName/worker3
+
+
+
+###
+############################################################################################################
+# starting up the cluster
+
+###
+# putting the name for each worker(fine)
+GET http://35.184.131.198:8081/api/setCurrentWorkerName/worker1
+
+
+###
+# putting the name for each worker(fine)
+GET http://35.184.131.198:8082/api/setCurrentWorkerName/worker2
+
+
+###
+# putting the name for each worker(fine)
+GET http://35.184.131.198:8083/api/setCurrentWorkerName/worker3
+
+###
+# setting the first worker as affnity
+GET http://35.184.131.198:8081/api/setAffinity
+
+###
+# unset affinity
+GET http://35.184.131.198:8082/api/unsetAffinity
+
+###
+# unset affinity
+GET http://35.184.131.198:8083/api/unsetAffinity
+
+###
+#creating a new database(fine)
+GET http://35.184.131.198:8082/api/createDB/Hello2
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+###
+# inserting a new collection with schema(fine)
+POST http://35.184.131.198:8081/api/createCol/Hello2/first
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+content-type: application/json
+
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "name",
+    "age"
+  ],
+  "additionalProperties": false
+}
+
+###
+#inserting a document (fine)
+POST http://35.184.131.198:8083/api/insertOne/hello2/first
+X-Token: @321bootstrappingNode123@
+X-Username: bootstrappingNode
+content-type: application/json
+
+{
+  "name": "FromIntellij",
+  "age": 22
+}
+
+###
+# checking if affinity (fine)
+GET http://35.184.131.198:8081/api/isAffinity
+X-Username: bootstrappingNode
+X-Token: @321bootstrappingNode123@
+
+
+###
+GET http://35.184.131.198:8080/api/register/yazan
+
+###
+GET http://localhost:8080/register/yazan
+
+
+###
+GET http://35.184.131.198:8080/api/getAllUsers

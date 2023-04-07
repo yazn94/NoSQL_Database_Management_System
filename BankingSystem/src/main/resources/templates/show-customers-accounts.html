@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers Accounts</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Customers Accounts</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Account Balance</th>
+        <th>ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${customers}">
+        <td th:text="${customer.getString('name')}"></td>
+        <td th:text="${customer.getString('phone')}"></td>
+        <td th:text="${customer.getString('address')}"></td>
+        <td th:text="${customer.get('accountBalance')}"></td>
+        <td th:text="${customer.get('_id')}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/bankingSystem" method="get">
+    <button type="submit">Back</button>
+</form>
+
+</body>
+</html>

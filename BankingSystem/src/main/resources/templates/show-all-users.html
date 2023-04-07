@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Active Users</title>
+</head>
+<body>
+<h1> All Active Users </h1>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Worker Name</th>
+        <th>Token</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.get('userName')}"></td>
+        <td th:text="${user.get('workerName')}"></td>
+        <td th:text="${user.get('token')}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

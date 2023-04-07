@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Info</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Account Balance</th>
+        <th>ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${customer.getString('name')}"></td>
+        <td th:text="${customer.getString('phone')}"></td>
+        <td th:text="${customer.getString('address')}"></td>
+        <td th:text="${customer.get('accountBalance')}"></td>
+        <td th:text="${customer.get('_id')}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

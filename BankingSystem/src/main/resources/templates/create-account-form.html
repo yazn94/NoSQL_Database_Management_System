@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+</head>
+<body>
+
+<form action="storeNewAccountData" method="post">
+    <label for="customerName">Customer Name:</label>
+    <input id="customerName" name="customerName" required type="text">
+    <br>
+    <label for="customerPhone">Customer Phone Number:</label>
+    <input id="customerPhone" name="customerPhone" required type="text">
+    <br>
+    <label for="customerAddress">Customer Address:</label>
+    <input id="customerAddress" name="customerAddress" required type="text">
+    <br>
+    <label for="accountBalance"> Account Balance</label>
+    <input id="accountBalance" name="accountBalance" required type="number">
+    <br>
+    <input name="Create Account" type="submit" value="Create Account"/>
+</form>
+
+<form action="/bankingSystem" method="get">
+    <button type="submit">Back</button>
+</form>
+
+</body>
+</html>

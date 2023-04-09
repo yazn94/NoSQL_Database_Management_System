@@ -18,7 +18,7 @@ public class NetworkManager {
     private final String BOOTSTRAPPING_NODE_TOKEN = "@321bootstrappingNode123@";
     private Logger logger = Logger.getLogger(NetworkManager.class.getName());
     private RestTemplate restTemplate = new RestTemplate();
-    private String databaseIP = "35.184.131.198";
+    private String databaseIP = "localhost";
     private HashMap<String, Integer> tokenToWorkerPort = new HashMap<>();
 
     private NetworkManager() {
